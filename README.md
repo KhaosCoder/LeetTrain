@@ -1,2 +1,2 @@
 # LeetTrain
-LeetCode training in python, javascript/typescript and C#
+LeetCode training in python, javascript/typescript and ruby
