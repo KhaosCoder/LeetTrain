@@ -17,42 +17,52 @@ function ListNode(val, next) {
 
 var createList = (arr) => {
     var ll, nextNode;
-    for (var i =0; i < arr.length-1; i++) {
-        if (i == 0) {
-            ll = new ListNode(arr[i]);
-            nextNode = ll;
+    if (arr.length == 1)
+        ll = new ListNode(arr[0]);
+    else
+        for (var i = 0; i < arr.length - 1; i++) {
+            if (i == 0) {
+                ll = new ListNode(arr[i]);
+                nextNode = ll;
+            }
+            nextNode.next = new ListNode(arr[i + 1]);
+            nextNode = nextNode.next;
         }
-        nextNode.next = new ListNode(arr[i+1]);
-        nextNode = nextNode.next;
-    }
     return ll;
 }
 
-var size = (list) => {
-    let count = 0; 
-    let node = list;
-    while (node) {
-        count++;
-        node = node.next
+var printList = (list) => {
+    let arr = [list.val];
+    while (list.next) {
+        arr.push(list.next.val);
+        list = list.next;
     }
-    return count;
+    console.log(arr);
 }
 
 var removeNthFromEnd = function(head, n) {
-    var s = size(head);
-    if (s == 1 & n == 1 )
-        return new ListNode();
-    var [node,i,limit] = [head,1,s-n]
-    while (i <= limit) {
-        node = node.next;
-        if (i == limit - 1) {
-            node.next = node.next.next;
-        }
-        i++;
+    let dummy = new ListNode(0, head);
+    let [l,r] = [dummy,head];
+
+    while (n > 0 && r) {
+        r = r.next;
+        n--;
     }
-    //console.log(node.val);
-    return head;
+
+    while (r) {
+        r = r.next;
+        l = l.next;
+    }
+
+    l.next = l.next.next;
+
+    return dummy.next;
 };
 
-removeNthFromEnd(createList([1,2,3,4,5]),2);
-console.log(removeNthFromEnd(createList([1]),1))
+printList(removeNthFromEnd(createList([1,2,3,4,5]),2));
+printList(removeNthFromEnd(createList([1,2]),1));
+printList(removeNthFromEnd(createList([1]),1));
+
+// 12/Jan/2022
+// Runtime: 122 ms, faster than 14.38% of JavaScript online submissions for Remove Nth Node From End of List.
+// Memory Usage: 40.1 MB, less than 72.75% of JavaScript online submissions for Remove Nth Node From End of List.
