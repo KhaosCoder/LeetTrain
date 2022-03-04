@@ -1,0 +1,15 @@
+base case -1 
+
+traverse top - bots 
+O (n)
+
+check for most ocurrences each
+save all ocurrences {}
+
+doubles => where is every ocurrenece? 
+
+ignore doubles 
+
+check greater and compliment ?
+
+return length - greater; else base case;

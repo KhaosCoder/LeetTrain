@@ -7,8 +7,7 @@ var isValid = function(s) {
     let close = [")","]","}"];
     let read = [];
 
-    let p=0;
-    for (p of s) {
+    for (let p of s) {
         if (close.indexOf(p) >= 0) {
             if (pairs[read.pop()] != p)
                 return false;

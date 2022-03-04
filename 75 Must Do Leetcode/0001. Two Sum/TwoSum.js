@@ -1,5 +1,5 @@
 function twoSum(nums, target) {
-    json = {}
+    json = {};
     for(var i = 0; i < nums.length; i++) {
         var sec = target - nums[i];
         

@@ -11,7 +11,7 @@ var threeSum = function (nums) {
         let [j, k] = [i+1, nums.length - 1];
         while (k>j) {
             let sum = nums[i] + nums[j] + nums[k];
-            if (nums[i] == -3) console.log(`${nums[i]} ${nums[j]} ${nums[k]} = ${sum}`);
+
             if (sum > 0)
                 k--;
             else if (sum < 0)
