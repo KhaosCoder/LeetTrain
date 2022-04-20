@@ -29,5 +29,6 @@ def twoSum(nums: List[int], target: int) -> List[int]:
 # Runtime: 580 ms, faster than 38.39% of Python3 online submissions for Two Sum.
 # Memory Usage: 14.7 MB, less than 92.37% of Python3 online submissions for Two Sum.
 '''
-
+visted = [False] * 9
+print(visted)
 
