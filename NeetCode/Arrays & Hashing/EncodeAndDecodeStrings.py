@@ -22,9 +22,11 @@ def decode(str):
         while str[i] != '$':
             num += str[i]
             i += 1
-        print(num)
+        i += 1
+        res.append(str[i:i+int(num)])
+        i += int(num)
     return res
 
 
-print (encode(["a", "b", "c"]))
-print (decode("a$b$c"))
+print (encode(["aafsd", "bhrgtfdx", "c456"]))
+print (decode(encode(["aafsd", "bhrgtfdx", "c456"])))

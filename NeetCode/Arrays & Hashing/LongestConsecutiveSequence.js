@@ -29,10 +29,10 @@
 // console.log(longestConsecutive([1,2,0,1]));
 
 var longestConsecutive = function (nums) {
-    let numSet = new Set(nums);
+    let numSet = new Set(nums); //O(N)
 
     let max = 0;
-    for (let num of nums) {
+    for (let num of nums) { // O(N)
         if (!numSet.has(num-1)) {
             let count = 0;
             while (numSet.has(num+count)) {
