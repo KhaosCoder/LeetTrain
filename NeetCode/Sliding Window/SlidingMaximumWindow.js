@@ -23,8 +23,8 @@ var maxSlidingWindow = function (nums, k) {
     return maxArr;
 };
 
-// console.log(maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3));
-// console.log(maxSlidingWindow([1, -1], 1));
+console.log(maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3));
+console.log(maxSlidingWindow([1, -1], 1));
 console.log(maxSlidingWindow([9,10,9,-7,-4,-8,2,-6], 5)); // [10,10,9,2]
 
 // Most optimal, ST O(N)
